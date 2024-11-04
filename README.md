@@ -16,16 +16,48 @@ This is a queuing model in which the arrival is Marcovian and departure distribu
 
 ![imAGE](2.png)
 
-
-
 ## Experiment:
 
+![image](https://github.com/lisianathiruselvan/Single-server-infinite-capacity---Markov-Model/assets/119389971/8623ed40-ddd9-4179-962f-a6f2616d045f)
 
- 
+![image](https://github.com/lisianathiruselvan/Single-server-infinite-capacity---Markov-Model/assets/119389971/ed5bcf2d-cd64-47a6-9db9-75c1c3e9da70)
+
 ## Program
-![image](https://github.com/ramjan1729/Single-server-infinite-capacity---Markov-Model/assets/103921593/5f1fd58d-5929-4c51-89ea-4cef009e5bad)
+``` py
+NAME: Sabari Akash A
+REG NO :212222230124
+
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
+ser_time=float(input("Enter the mean  inter service time of Lathe Machine (in secs) :  "))
+Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
+lam=1/arr_time
+mu=1/(ser_time+Robot_time)
+print("--------------------------------------------------------------")
+print("Single Server with Infinite Capacity - (M/M/1):(oo/FIFO)")
+print("--------------------------------------------------------------")
+print("The mean arrival rate per second : %0.2f "%lam)
+print("The mean service rate per second : %0.2f "%mu)
+if (lam <  mu):
+    Ls=lam/(mu-lam)
+    Lq=Ls-lam/mu
+    Ws=Ls/lam
+    Wq=Lq/lam
+    print("Average number of objects in the system : %0.2f "%Ls)
+    print("Average number of objects in the conveyor :  %0.2f "%Lq)
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)
+    print("Average waiting time of an object in the conveyor : %0.2f secs"%Wq)
+    print("Probability that the system is busy : %0.2f "%(lam/mu) )
+    print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
+else:
+    print("Warning! Objects Over flow will happen in the conveyor")
+print("---------------------------------------------------------------")
+```
 
 ## Output :
 
+![image](https://github.com/lisianathiruselvan/Single-server-infinite-capacity---Markov-Model/assets/119389971/7a71833a-17fb-484b-be85-1ff2888f7ff7)
+
+
 ## Result :
 
+The average number of material in the sysytem and in the conveyor and waiting time are successfully found.
